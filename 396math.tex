@@ -1,0 +1,79 @@
+\documentclass[lang=cn,newtx,10pt,scheme=chinese]{elegantbook}
+
+
+\title{396数学基础讲义}
+%\subtitle{Elegant\LaTeX\ 经典之作}
+
+\author{Gaw}
+\institute{HUAYAN}
+\date{2026/9/1}
+\version{0.1}
+%\bioinfo{自定义}{信息}
+
+
+\setcounter{tocdepth}{3}
+
+\logo{logo-blue.png}
+\cover{cover.jpg}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+
+% 修改标题页的橙色带
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+\usepackage{exam-zh-choices}
+\ExplSyntaxOn
+\NewDocumentCommand{\fillparen}{o}
+{
+	\unskip \nobreak \hfill \penalty50 \hspace{1.5em} \hbox{} \nobreak \hfill
+	\IfNoValueTF{#1}
+	{（\hspace{0.5em} \hspace{0.5em}）} % 空括号内部左右各加 0.3em 空白
+	{（\hspace{0.5em} \tl_trim_spaces:n {#1} \hspace{0.35em}）}
+}
+\ExplSyntaxOff
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+\tableofcontents
+
+\mainmatter
+
+
+
+\begin{exercise}
+
+设 $P(x)=A(x-1)+B(x-1)^2+C(x-1)^3$ 是函数 $f(x)=x^x-1$ 在点 $x=1$ 处的三阶泰勒多项式，则\fillparen[ ]
+	\begin{choices}[columns=5,label-align=center]
+		\item 1
+		\item 2
+		\item 3
+		\item 4
+		\item 5
+	\end{choices}
+	
+\end{exercise}
+
+\begin{example}	
+	设 $P(x)=A(x-1)+B(x-1)^2+C(x-1)^3$ 是函数 $f(x)=x^x-1$ 在点 $x=1$ 处的三阶泰勒多项式，则
+	\begin{choices}[columns=5,label-align=center]
+		\item 1
+		\item 2
+		\item 3
+		\item 4
+		\item 5
+	\end{choices}
+	
+\end{example}
+
+
+
+
+
+\end{document}

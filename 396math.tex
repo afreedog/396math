@@ -36,6 +36,8 @@
 }
 \ExplSyntaxOff
 
+
+
 \begin{document}
 
 \maketitle
@@ -45,44 +47,33 @@
 
 \mainmatter
 
-\chapter{函数极限与连续}
-\begin{introduction}
-	\item 积分定义
-	\item Fubini 定理
-	\item 最优性原理
-	\item 柯西列性质
-	\item 韦达定理
-\end{introduction}
+%% ------------高数部分-------------%%
+%第1章 函数极限连续
+\include{tex/1.tex}
+%第2章 一元函数微分学
+\include{tex/2.tex}
+%第3章 一元函数积分学
+\include{tex/3.tex}
+%第4章 多元函数微分学
+\include{tex/4.tex}
 
+%% ------------线代部分-------------%%
+%第5章 行列式
+\include{tex/5.tex}
+%第6章 矩阵
+\include{tex/6.tex}
+%第7章 向量组
+\include{tex/7.tex}
+%第8章 方程组
+\include{tex/8.tex}
 
-\section{函数极限与连续}
-\begin{exercise}
-
-设 $P(x)=A(x-1)+B(x-1)^2+C(x-1)^3$ 是函数 $f(x)=x^x-1$ 在点 $x=1$ 处的三阶泰勒多项式，则\fillparen[ ]
-	\begin{choices}[columns=5,label-align=center]
-		\item 1
-		\item 2
-		\item 3
-		\item 4
-		\item 5
-	\end{choices}
-	
-\end{exercise}
-
-\begin{example}	
-	设 $P(x)=A(x-1)+B(x-1)^2+C(x-1)^3$ 是函数 $f(x)=x^x-1$ 在点 $x=1$ 处的三阶泰勒多项式，则
-	\begin{choices}[columns=5,label-align=center]
-		\item 1
-		\item 2
-		\item 3
-		\item 4
-		\item 5
-	\end{choices}
-	
-\end{example}
-
-
-
+%% ------------概率部分-------------%%
+%第9章 随机事件及概率
+\include{tex/9.tex}
+%第10章 随机变量及其分布
+\include{tex/10.tex}
+%第11章 随机变量的数字特征
+\include{tex/11.tex}
 
 
 \end{document}

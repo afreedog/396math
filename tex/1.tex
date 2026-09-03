@@ -11,7 +11,160 @@
 
 \section{函数}
 \subsection{函数的概念}
+\begin{definition*}[函数]
+    若 $D$ 为一个非空实数集合，设有一个对应法则 $f$ ，使得对每一个 $x \in D$ 都有唯一确定的实数 $y$ 与之对应，则称这个对应法则 $f$ 为定义在 $D$ 上的一个函数，或称变量 $y$ 是变量 $x$ 的函数，记作
+$$
+y=f(x), x \in D
+$$
+其中 $x$ 称为自变量，$y$ 称为因变量，集合 $D$ 称为函数的定义域，也可以记作 $D(f)$ ．对于 $x_0 \in D$ 所对应的 $y$ 的值，记作 $y_0$ 或 $f\left(x_0\right)$ ，称为当 $x=x_0$ 时函数 $y=f(x)$ 的函数值．全体函数值组成的集合 $\{y \mid y=f(x), x \in D\}$ 称为函数 $y=f(x)$ 的值域，记作 $f(D)$ ．	
+\end{definition*}
+
+\begin{remark}
+	\begin{enumerate}
+		\item 函数的三要素：定义域、对应法则、值域
+		\item 两个函数相同：当且仅当两函数的定义域与对应法则完全相同．
+		\item 函数定义域是指函数自变量的取值范围，例如函数 $f\left(x^2+5\right)$ 与 $f(x)$ 的自变量均为 $x$ .
+		\item 在同一对应法则下，$f(\square)$ 括号内整体的取值范围是一样的．\\
+	\end{enumerate}	
+	
+\end{remark}
+
+% 1.1
+\begin{example}
+		
+函数 $y=\sqrt{9-x^2}+\frac{1}{x}$ 的定义域为\fillparen[]
+	\begin{choices}[columns=5]
+		\item $[-3,0)$
+		\item $(0,3]$
+		\item $[-3,3]$
+		\item $[-3,0) \cup(0,3]$
+		\item $(0,9)$
+	\end{choices}
+	\vspace{3cm} 
+\end{example}
+
+\begin{solution}
+ 函数 $y=\sqrt{9-x^2}$ 的定义域为 $[-3,3]$ ，函数 $y=\frac{1}{x}$ 的定义域为 $(-\infty, 0) \cup(0, \infty)$ ，所以函数 $y=\sqrt{9-x^2}+\frac{1}{x}$ 的定义域为 $[-3,0) \cup(0,3]$ ,故应选D	
+\end{solution}
+
+%1.2
+\begin{example}
+
+设 $f(x)$ 的定义域为 $[5,10]$ ，则 $f\left(x^2+1\right)$ 的定义域为 
+  \fillparen[ ]
+	\begin{choices}[columns=5]
+		\item $[-3,-2]$
+		\item $［2，3］$
+		\item $［－2，2］$
+		\item $［－3，3 ］$
+		\item $[-3,-2] \cup[2,3]$	
+	\end{choices}
+	\vspace{3cm} 
+\end{example}
+\begin{solution}
+显然函数 $f(x)$ 中 $x$ 的取值范围为 $5 \leqslant x \leqslant 10$ ，又 $f\left(x^2+1\right)$ 中 $x^2+1$ 与 $f(x)$ 中 $x$ 的取值范围相同，所以 $5 \leqslant x^2+1 \leqslant 10$ ，解得 $-3 \leqslant x \leqslant-2$ 或 $2 \leqslant x \leqslant 3$ ，即 $f\left(x^2+1\right)$ 的定义域为$[-3,-2] \cup[2,3]$ ，故应选 E．
+\end{solution}
+
+
+%1.3
+\begin{example}
+	
+若函数 $y=f(x+1)$ 的定义域是 $[-2,3]$ ，则函数 $y=f(2 x-1)$ 的定义域为
+	\fillparen[ ]
+	\begin{choices}[columns=5]
+		\item $[0,3]$
+		\item $[-2,4]$
+		\item $\left[-5, \frac{5}{2}\right]$
+		\item $\left[-1, \frac{4}{5}\right]$
+		\item $\left[0, \frac{5}{2}\right]$
+	\end{choices}
+	%\vspace{3cm} 
+\end{example}
+\begin{solution}
+因为函数 $y=f(x+1)$ 的定义域是 $[-2,3]$ ，即 $-2 \leqslant x \leqslant 3,-1 \leqslant x+1 \leqslant 4$ ，所以函数 $y=f(x)$ 的定义域为 $[-1,4]$。
+
+	
+对于函数 $y=f(2 x-1),-1 \leqslant 2 x-1 \leqslant 4,0 \leqslant x \leqslant \frac{5}{2}$ ，所以函数 $y=f(2 x-1)$ 的定义域为 $\left[0, \frac{5}{2}\right]$ ，故应选E
+\end{solution}
+
+\newpage
+
+
 \subsection{函数的性质}
+\noindent \textbf{一、有界性}
+\begin{definition*}[有界性]
+设 $f$ 为定义在 $D$ 上的函数．若存在正数 $M$ ，使得对每一个 $x \in D$ ，有
+$$
+	|f(x)| \leqslant M
+$$
+则称 $f$ 为 $D$ 上的有界函数．	
+\end{definition*}
+
+
+\begin{remark}
+	\begin{enumerate}
+		\item 函数 $f(x)$ 有界或无界是相对于某个区间而言的
+		\item 函数有界的充要条件是函数既有上界又有下界\\
+	\end{enumerate}
+\end{remark}
+
+\noindent \textbf{二、单调性}
+\begin{definition*}[单调性]
+设 $f$ 为定义在 $D$ 上的函数．若对任何 $x_1, x_2 \in D$ ，当 $x_1<x_2$ 时，总有
+\begin{itemize}
+	\item[（i）] $f\left(x_1\right) \leqslant f\left(x_2\right)$ ，则称 $f$ 为 $D$ 上的（递）增函数，特别当成立严格不等式 $f\left(x_1\right)< f\left(x_2\right)$ 时，称 $f$ 为 $D$ 上的严格（递）增函数；
+	\item[（ii）] $f\left(x_1\right) \geqslant f\left(x_2\right)$ ，则称 $f$ 为 $D$ 上的（递）减函数，特别当成立严格不等式 $f\left(x_1\right)> f\left(x_2\right)$ 时，称 $f$ 为 $D$ 上的严格（递）减函数；
+\end{itemize}
+
+增函数和减函数统称为单调函数，严格增函数和严格减函数统称为严格单调函数．	
+\end{definition*}
+
+
+
+
+\noindent \textbf{三、奇偶性}
+\begin{definition*}[奇偶性]
+	
+\end{definition*}
+\noindent \textbf{四、周期性}
+\begin{definition*}[周期性]
+	
+\end{definition*}
+\begin{example}
+	
+	
+	\fillparen[ ]
+	\begin{choices}[columns=5]
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 	
+	\end{choices}
+	\vspace{3cm} 
+\end{example}
+\begin{solution}
+	
+\end{solution}
+
+\begin{example}
+	
+	
+	\fillparen[ ]
+	\begin{choices}[columns=5]
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 	
+	\end{choices}
+	\vspace{3cm} 
+\end{example}
+\begin{solution}
+	
+\end{solution}
+
+
 \subsection{基础初等函数}
 \subsection{特殊函数}
 
@@ -31,11 +184,19 @@
 \subsection{连续函数的定义与性质}
 \subsection{函数的间断点及其分类}
 
-
-
+\begin{example}
 	
-
-
-
-
-
+	
+	\fillparen[ ]
+	\begin{choices}[columns=5]
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 	
+	\end{choices}
+	\vspace{3cm} 
+\end{example}
+\begin{solution}
+	
+\end{solution}

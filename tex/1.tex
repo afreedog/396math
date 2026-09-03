@@ -140,20 +140,35 @@ $$
 \end{remark}
 
 \begin{example}
-	
-	
-	\fillparen[ ]
+		
+函数 $f(x)=\ln \left(\sqrt{x^2+a^2}+x\right)(a$ 为常数，且 $a \neq 0)$ \fillparen[ ]
 	\begin{choices}[columns=5]
-		\item 
-		\item 
-		\item 
-		\item 
-		\item 	
+		\item 为奇函数
+		\item 为偶函数
+		\item 当 $a= \pm 1$ 时为奇函数
+		\item 当 $a= \pm 1$ 时为偶函数
+		\item 为非奇非偶函数	
 	\end{choices}
 	\vspace{3cm} 
 \end{example}
 \begin{solution}
-	
+由 $f(x)=\ln \left(\sqrt{x^2+a^2}+x\right)$ ，得
+
+$$
+\begin{aligned}
+	f(-x) & =\ln \left[\sqrt{(-x)^2+a^2}-x\right]=\ln \left(\sqrt{x^2+a^2}-x\right) \\
+	& =\ln \frac{\left(\sqrt{x^2+a^2}-x\right)\left(\sqrt{x^2+a^2}+x\right)}{\sqrt{x^2+a^2}+x}=\ln \frac{a^2}{\sqrt{x^2+a^2}+x} \\
+	& =\ln a^2-\ln \left(\sqrt{x^2+a^2}+x\right)
+\end{aligned}
+$$
+
+可知当 $a^2=1$ ，即 $a= \pm 1$ 时， $\ln a^2=0$ ，从而
+
+$$
+f(-x)=-\ln \left(\sqrt{x^2+a^2}+x\right)=-f(x),
+$$
+
+此时 $f(x)$ 为奇函数．当 $a^2 \neq 1$ ，即 $a \neq \pm 1$ 时，$f(x)$ 为非奇非偶函数．故选（C）．	
 \end{solution}
 
 \noindent \textbf{四、周期性}

@@ -230,7 +230,7 @@ $$
 
 \begin{example}
 		
-若 $f(x)$ 既关于直线 $x=a$ 对称，又关于直线 $x=b$ 对称，且 $b>a$ ，则 $f(x)$ 的周斯为	\fillparen[ ]
+若 $f(x)$ 既关于直线 $x=a$ 对称，又关于直线 $x=b$ 对称，且 $b>a$ ，则 $f(x)$ 的周期为	\fillparen[ ]
 	\begin{choices}[columns=5]
 		\item $a$
 		\item $a+b$
@@ -251,19 +251,68 @@ $f(x)$ 关于直线 $x=a$ 对称得到 $f(a-x)=f(a+x)$ ，可以化为 $f(t)=f(2
 
 
 \textbf{一、常值函数}
+
+
 $y=C$ ，定义域为 $(-\infty,+\infty)$ ，图形为平行于 $x$ 轴的直线．在 $y$ 轴上的截距为 $C$ ．
 
 
+\begin{center}
+	\begin{tikzpicture}[scale=0.6]
+		% 对称的坐标轴
+		\draw[->] (-5,0) -- (5,0) node[below] {\(x\)};
+		\draw[->] (0,-3) -- (0,3) node[left] {\(y\)};
+		\node at (0,0) [below left] {\(O\)};
+		
+		% 绘制两条粗细一样的天蓝色水平线，标签统一放在右侧
+		\draw[cyan, thick] (-4, 2) -- (4, 2) node[right] {\(y=C \ (C>0)\)};
+		\draw[cyan, thick] (-4, -2) -- (4, -2) node[right] {\(y=C \ (C<0)\)};
+		
+		% 在 x 轴右侧标注 C=0
+		\node at (6, 0) {\(C=0\)};
+	\end{tikzpicture}
+\end{center}
 
 \textbf{二、幂函数}
 
 
+$y=x^a$ ，其定义域随着 $\alpha$ 的不同而变化．但不论 $\alpha$ 取何值，总在 $(0,+\infty)$ 内有定义，且
+图形过点 $(1,1)$ ．当 $\alpha>0$ 时，函数图形过原点．
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8]
+		% 坐标轴 (为了容纳 y=x^3，将Y轴范围拉大)
+		\draw[->] (-5,0) -- (5,0) node[below] {\(x\)};
+		\draw[->] (0,-3.5) -- (0,3.5) node[left] {\(y\)};
+		\node at (0,0) [below left] {\(O\)};
+		
+		
+		% y = x^2 (蓝色粗线)
+		\draw[cyan, thick, domain=-1.5:1.5, samples=100] plot (\x, {\x*\x});
+		\node at (-1.8, 2.5) {\(y=x^2\)}; % 标签放在曲线的左上侧
+		
+		% y = x (黑色粗线)
+		\draw[black, thick, domain=-2.5:2.5, samples=100] plot (\x, {\x});
+		\node at (3.5, 3) {\(y=x\)}; % 标签放在直线的右上侧
+		
+		% y = x^(1/2) (黑色粗线) 注意定义域 x >= 0
+		\draw[orange, thick, domain=0:3.5, samples=100] plot (\x, {sqrt(\x)});
+		\node at (5.0, 2) {\(y=x^{1/2}\)}; % 标签放在曲线的右上方
+		
+		% y = 1/x (黑色粗线) 注意分段绘制，避免 x=0 处连线
+		\draw[green!50, thick, domain=0.3:3.5, samples=100] plot (\x, {1/\x});
+		\node at (5.0, 0.4) {\(y=1/x\)};
+		\draw[green!50, thick, domain=-3.5:-0.3, samples=100] plot (\x, {1/\x});
+		\node at (-5.0, -0.4) {\(y=1/x\)};
+	
+	\end{tikzpicture}
+\end{center}
+
+
+
 \textbf{三、指数函数}
 
-$y=a^x(a>0, a \neq 1)$ ，其定义域为 $(-\infty,+\infty)$ 。当 $0<a<1$ 时，函数严格单调递减;当 $a>1$ 时，函数严格单调递增．指数函数的图形恒过点$(0,1)$。微积分中经常用到以 $e$为底的指数函数，即 $y=\mathrm{e}^x$ 。
 
-
-指数函数 $y=a^x$ 的性质归纳见下表。
+$y=a^x(a>0, a \neq 1)$ ，其定义域为 $(-\infty,+\infty)$ 。当 $0<a<1$ 时，函数严格单调递减;当 $a>1$ 时，函数严格单调递增．指数函数的图形恒过点$(0,1)$。微积分中经常用到以 $e$为底的指数函数，即 $y=\mathrm{e}^x$.指数函数 $y=a^x$ 的性质归纳见下表。
 
 
 
@@ -293,7 +342,7 @@ $y=a^x(a>0, a \neq 1)$ ，其定义域为 $(-\infty,+\infty)$ 。当 $0<a<1$ 时
 	\cline{2-3}
 	& \multicolumn{2}{|l|}{（2）值域：$(0,+\infty)$ ，图像在 $x$ 轴上方} \\
 	\cline{2-3}
-	& （3）过点（0，1），即 $x=0$ 时，$y=1$ & \\
+	&  \multicolumn{2}{|l|}{ （3）过点（0，1），即 $x=0$ 时，$y=1$ } \\   
 	\cline{2-3}
 	& （4）当 $a>1$ 时，$\left\{\begin{array}{l}\text { 若 } x>0, \text { 则 } a^x>1 \\ \text { 若 } x<0, \text { 则 } 0<a^x<1\end{array}\right.$ & 当 $0<a<1$ 时，$\left\{\begin{array}{l}\text { 若 } x<0, \text { 则 } a^x>1 \\ \text { 若 } x>0, \text { 则 } 0<a^x<1\end{array}\right.$ \\
 	\cline{2-3}
@@ -304,9 +353,274 @@ $y=a^x(a>0, a \neq 1)$ ，其定义域为 $(-\infty,+\infty)$ 。当 $0<a<1$ 时
 
 \textbf{四、对数函数}
 
+
+$y=\log _a x(a>0, a \neq 1)$ ，其定义域为 $(0,+\infty)$ ，它与 $y=a^x$ 互为反函数．微积分中常用到以 e 为底的对数，记作 $y=\ln x$ ，称为自然对数．对数函数的图形恒过点 $(1,0)$ ．对数函数$y=\log _a x$ 的性质归纳见下表．
+
+
+\begin{tabular}[t]{|c|p{6.8cm}|p{6.8cm}|}
+	\hline & \centering \(a>1\) & \(0<a<1\) \\
+	\cline{2-3} % 关键修改：只画2、3列的横线
+	\multirow{5}{*}{\shortstack{图像 \\[10ex] 性质}} &  \centering \resizebox{4cm}{!}{
+		\begin{tikzpicture}[>=stealth, font=\large]
+			\definecolor{skyblue}{RGB}{0, 158, 224}
+			\draw[->, thick, gray!80!black] (-1.5,0) -- (4.5,0) node[below=1pt, xshift=-2pt] {\(x\)};
+			\draw[->, thick, gray!80!black] (0,-2.5) -- (0,2.5) node[left=1pt] {\(y\)};
+			\node[below left=1pt, inner sep=1pt] at (0,0) {\(O\)};
+			\node[below right] at (1,0) {\(1\)};
+			\draw[skyblue, very thick, domain=0.2:4.5, samples=100] plot (\x, {ln(\x)});
+			\draw[dashed] (1,-2.5) -- (1,2.5);
+		\end{tikzpicture}
+	}  &  \resizebox{4cm}{!}{
+		\begin{tikzpicture}[>=stealth, font=\large]
+			\definecolor{skyblue}{RGB}{0, 158, 224}
+			\draw[->, thick, gray!80!black] (-1.5,0) -- (4.5,0) node[below=1pt, xshift=-2pt] {\(x\)};
+			\draw[->, thick, gray!80!black] (0,-2.5) -- (0,2.5) node[left=1pt] {\(y\)};
+			\node[below left=1pt, inner sep=1pt] at (0,0) {\(O\)};
+			\node[below right] at (1,0) {\(1\)};
+			\draw[skyblue, very thick, domain=0.2:4.5, samples=100] plot (\x, {ln(\x)/ln(0.5)});  % log_{0.5} x
+			\draw[dashed] (1,-2.5) -- (1,2.5);
+		\end{tikzpicture}	
+	} 	
+	\\
+	\cline{2-3} % 关键修改：只画2、3列的横线
+	& \multicolumn{2}{|l|}{（1）定义域：$(0,+\infty)$，图像在 $y$ 轴右侧}\\
+	\cline{2-3}
+	& \multicolumn{2}{|l|}{（2）值域： $\mathbf{R}$ } \\
+	\cline{2-3}
+	& \multicolumn{2}{|l|}{ （3）过点（1，0），即 $x=1$ 时，$y=0$} \\  
+	\cline{2-3}
+	& （4）在 $(0,+\infty)$上是增函数 & 在 $(0,+\infty)$上是减函数 \\
+	\hline
+\end{tabular}
+\vspace{0.8cm}
+
 \textbf{五、三角函数}
 
+
+常用的三角函数见下表.
+
+
+\begin{tabular}[t]{|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|}
+	\hline & \centering $y=\sin x$ & $y=\cos x$ & $y=\tan x$ & $y=\cot x$ \\
+	\hline 定义域 & R & R & $x \neq k \pi+\frac{\pi}{2}(k \in \mathbf{Z})$ & $x \neq k \pi(k \in \mathbf{Z})$ \\
+	\hline 值域 & $[-1,1]$ & $[-1,1]$ & R & R \\
+	\hline  \makecell[c]{图像}
+	& \resizebox{3.5cm}{!}{
+		\begin{tikzpicture}[>=stealth, font=\large]
+		\definecolor{skyblue}{RGB}{0, 158, 224}
+		
+		% 坐标轴
+		\draw[->, thick, gray!80!black] (-3.5,0) -- (3.5,0) node[below right] {\(x\)};
+		\draw[->, thick, gray!80!black] (0,-3.5) -- (0,3.5) node[left] {\(y\)};
+		
+		% 正弦曲线：domain 直接使用 -pi 到 pi，sin(\x r) 将弧度转为度数
+		\draw[skyblue, very thick, domain=-pi:pi, samples=100] plot (\x, {sin(\x r)});
+		\end{tikzpicture}
+	}	
+	& 
+	\resizebox{3.5cm}{!}{
+		\begin{tikzpicture}[>=stealth, font=\large]
+			\definecolor{skyblue}{RGB}{0, 158, 224}
+			
+			% 坐标轴
+			\draw[->, thick, gray!80!black] (-3.5,0) -- (3.5,0) node[below right] {\(x\)};
+			\draw[->, thick, gray!80!black] (0,-3.5) -- (0,3.5) node[left] {\(y\)};
+
+			
+			% 正弦曲线：domain 直接使用 -pi 到 pi，sin(\x r) 将弧度转为度数
+			\draw[skyblue, very thick, domain=-pi:pi, samples=100] plot (\x, {cos(\x r)});
+		\end{tikzpicture}
+	}
+
+	& 
+	\resizebox{3.5cm}{!}{
+		\begin{tikzpicture}[>=stealth, font=\large]
+			\definecolor{skyblue}{RGB}{0, 158, 224}
+			
+			% 坐标轴
+			\draw[->, thick, gray!80!black] (-3.5,0) -- (3.5,0) node[below right] {\(x\)};
+			\draw[->, thick, gray!80!black] (0,-3.5) -- (0,3.5) node[left] {\(y\)};
+
+			
+			% 渐近线（虚线）
+			\draw[dashed, gray!60] (-1.5708,-3.5) -- (-1.5708,3.5);
+			\draw[dashed, gray!60] (1.5708,-3.5) -- (1.5708,3.5);
+			
+			% 绘制正切曲线，裁剪 y 轴范围以显示有限区域
+			\begin{scope}
+				\clip (-2.8,-3.5) rectangle (2.8,3.5);
+				\draw[skyblue, very thick, domain=-pi/2+0.03:pi/2-0.03, samples=200] plot (\x, {tan(\x r)});
+			\end{scope}
+		\end{tikzpicture}
+	}
+	& 
+	\resizebox{3.5cm}{!}{
+		\begin{tikzpicture}[>=stealth, font=\large]
+			\definecolor{skyblue}{RGB}{0, 158, 224}
+			
+			% 坐标轴（适当扩大范围）
+			\draw[->, thick, gray!80!black] (-3.5,0) -- (3.5,0) node[below right] {\(x\)};
+			\draw[->, thick, gray!80!black] (0,-3.5) -- (0,3.5) node[left] {\(y\)};
+			\node[below left=1pt, inner sep=1pt] at (0,0) {\(O\)};
+			
+			
+			% 渐近线（虚线）
+			\draw[dashed, gray!60] (-3.1416,-3.5) -- (-3.1416,3.5);
+			\draw[dashed, gray!60] (0,-3.5) -- (0,3.5);
+			\draw[dashed, gray!60] (3.1416,-3.5) -- (3.1416,3.5);
+			
+			% 绘制 cotx 的两个分支，避开奇点
+			\begin{scope}
+				\clip (-3.5,-3.5) rectangle (3.5,3.5);  % 裁剪超出部分
+				\draw[skyblue, very thick, domain=-pi+0.03:-0.03, samples=200] 
+				plot (\x, {cos(\x r)/sin(\x r)});
+				\draw[skyblue, very thick, domain=0.03:pi-0.03, samples=200] 
+				plot (\x, {cos(\x r)/sin(\x r)});
+			\end{scope}
+		\end{tikzpicture}
+	}
+	\\
+	\hline 周期性 & $2 \pi$ & $2 \pi$ & $\boldsymbol{\pi}$ & $\pi$ \\
+	\hline 奇偶性 & 奇函数 & 偶函数 & 奇函数 & 奇函数 \\
+	\hline \makecell{单调性} & \begin{tabular}[t]{c}
+		$\left[2 k \pi-\frac{\pi}{2}, 2 k \pi+\frac{\pi}{2}\right]$  $\uparrow$
+		\\
+		$[2 k \pi+\frac{\pi}{2}, 2 k \pi+\frac{3 \pi}{2}]$  $\downarrow$
+	\end{tabular} & \begin{tabular}[t]{c}
+		$[(2 k-1) \pi, 2 k \pi]$ \quad $\uparrow$
+		\\
+		$[2 k \pi,(2 k+1) \pi]$ \quad $\downarrow$
+		
+	\end{tabular} & \begin{tabular}[t]{c}
+		$\left(k \pi-\frac{\pi}{2}, k \pi+\frac{\pi}{2}\right)$
+		\quad $\uparrow$
+	\end{tabular} & \begin{tabular}[t]{c}
+		$(k \pi,(k+1) \pi)$
+		\quad $\downarrow$
+	\end{tabular} \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+特殊角的三角函数值见下表．
+
+\begingroup
+\renewcommand{\arraystretch}{1.8}
+\setlength{\extrarowheight}{0pt} 
+\begin{tabular}[t]{|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+	\hline $\alpha$ & \color{red}{0} & \color{red}{ $\frac{\pi}{6}$ }  & \color{red}{ $\frac{\pi}{4}$ }  & \color{red}{ $\frac{\pi}{3}$ }  & \color{red}{ $\frac{\pi}{2}$ }  \\
+	\hline $\sin \alpha$ & 0 & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & 1 \\
+	\hline $\cos \alpha$ & 1 & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & 0 \\
+	\hline $\tan \alpha$ & 0 & $\frac{\sqrt{3}}{3}$ & 1 & $\sqrt{3}$ & 不存在 \\
+	\hline $\cot \alpha$ & 不存在 & $\sqrt{3}$ & 1 & $\frac{\sqrt{3}}{3}$ & 0 \\
+	\hline
+\end{tabular}
+
+\endgroup
+
+\newpage
+
 \textbf{六、反三角函数函数}
+
+
+常用的反三角函数：
+
+
+\begin{tabular}[t]{|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|}
+	\hline & \centering $y=\arcsin x$ & $y=\arccos x$ & $y=\arctan x$ & $y=\arccot x$ \\
+	\hline 定义域 & $[-1,1]$ & $[-1,1]$ & R &  R\\
+	\hline 值域 & $[-\frac{\pi}{2},\frac{\pi}{2}]$ & $
+	[0,\pi]$ & $(-\frac{\pi}{2},\frac{\pi}{2})$ & $(0,\pi)$ \\
+	\hline  \makecell[c]{图像}
+	& \resizebox{3.5cm}{!}{
+	\begin{tikzpicture}[>=stealth, font=\large]
+		\definecolor{skyblue}{RGB}{0, 158, 224}
+		
+		% 坐标轴
+		\draw[->, thick, black] (-1.5,0) -- (1.5,0) node[below right] {\(x\)};
+		\draw[->, thick, black] (0,-2.2) -- (0,2.2) node[left] {\(y\)};
+		
+		% 绘制 arcsin x（参数方程）
+		\draw[skyblue, very thick, domain=-pi/2:pi/2, samples=100] plot ({sin(\x r)}, \x);
+		
+		% 添加水平虚线 y = π/2 和 y = -π/2（仅画在定义域 x∈[-1,1] 内）
+		\draw[dashed, skyblue, thick] (0, {pi/2}) -- (1, {pi/2});
+		\draw[dashed, skyblue, thick] (-1, {-pi/2}) -- (0, {-pi/2});
+		
+		% 刻度标签（可选）
+		\node[below] at (1,0) {1};
+		\node[below] at (-1,0) {-1};
+		\node[left] at (0,1.57) {\(\frac{\pi}{2}\)};
+		\node[left] at (0.8,-1.57) {\(-\frac{\pi}{2}\)};
+	\end{tikzpicture}
+	}	
+	& 
+	\resizebox{3.5cm}{!}{
+	\begin{tikzpicture}[>=stealth, font=\large]
+		\definecolor{skyblue}{RGB}{0, 158, 224}
+		
+		% 坐标轴
+		\draw[->, thick, black] (-1.5,0) -- (1.5,0) node[below right] {\(x\)};
+		\draw[->, thick, black] (0,-0.5) -- (0,4.0) node[left] {\(y\)};
+		
+		\draw[dashed, skyblue, thick] (-1, {pi}) -- (0, {pi});
+		
+				
+		% 刻度（可选）
+		\draw (-1,0) -- (-1,-0.1) node[below] {\(-1\)};
+		\draw (1,0) -- (1,-0.1) node[below] {\(1\)};
+		\draw (0,{pi/2}) -- (-0.2,{pi/2}) node[left] {\(\frac{\pi}{2}\)};
+		\draw (0,{pi}) -- (-0.1,{pi})
+		node[right] at (0.15,3.14) {\(\pi\)};
+		
+		% 反余弦曲线：y = arccos(x)
+		\draw[skyblue, very thick, domain=-1:1, samples=100] plot (\x, {rad(acos(\x))});
+	\end{tikzpicture}
+	}
+	
+	& 
+	\resizebox{3.5cm}{!}{
+
+	\begin{tikzpicture}[>=stealth, font=\large]
+		\definecolor{skyblue}{RGB}{0, 158, 224}
+		
+		% 坐标轴
+		\draw[->, thick, black] (-2,0) -- (2,0) node[below right] {\(x\)};
+		\draw[->, thick, black] (0,-2.5) -- (0,2.5) node[left] {\(y\)};
+		
+		% 水平渐近线（虚线）
+		\draw[dashed, black] (-2,{pi/2}) -- (2,{pi/2}) node[right] {\(\frac{\pi}{2}\)};
+		\draw[dashed, black] (-2,{-pi/2}) -- (2,{-pi/2}) node[right] {\(-\frac{\pi}{2}\)};
+		
+		% 绘制反正切曲线（无需裁剪）
+		\draw[skyblue, very thick, domain=-2:2, samples=200] plot (\x, {rad(atan(\x))});
+	\end{tikzpicture}
+	}
+	& 
+	\resizebox{3.5cm}{!}{
+
+	\begin{tikzpicture}[>=stealth, font=\large]
+		\definecolor{skyblue}{RGB}{0, 158, 224}
+		
+		% 坐标轴（x 轴加宽，y 轴上提以显示渐近线）
+		\draw[->, thick, black] (-2,0) -- (2,0) node[below right] at (1.5,0) {\(x\)};
+		\draw[->, thick, black] (0,-0.5) -- (0,3.5) node[left] {\(y\)};
+
+		
+		% 水平渐近线（虚线）
+		\draw[dashed, black] (-2,0) -- (2,0) node[right] {\(0\)};
+		\draw[dashed, black] (-2,{pi}) -- (2,{pi}) node[right] {\(\pi\)};
+		
+		% 绘制 arccot 曲线（单调递减，从 π 到 0）
+		\draw[skyblue, very thick, domain=-2:2, samples=200] 
+		plot (\x, {pi/2 - rad(atan(\x))});
+	\end{tikzpicture}
+	}
+	\\
+	\hline 奇偶性 & 奇函数 & 非奇非偶函数 & 奇函数 & 非奇非偶函数 \\
+	\hline \makecell{单调性} & 在定义域内是增函数&在定义域内是减函数 & 在定义域内是增函数 & 在定义域内是减函数 \\
+	\hline
+\end{tabular}
 
 
 \subsection{特殊函数}
